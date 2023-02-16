@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - AreaA
+  - AreaF
+  - AreaB
+  - AreaC
+  - AreaD
+  - AreaE
   layers:
   - Default
   - TransparentFX

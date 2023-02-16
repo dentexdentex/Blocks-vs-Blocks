@@ -60,6 +60,7 @@
     <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/Scaling.cs" />
     <Compile Include="Assets/Scripts/CubeRaycaster.cs" />
+    <Compile Include="Assets/Scripts/Compliting.cs" />
     <Compile Include="Assets/Scripts/Scaling1.cs" />
   </ItemGroup>
   <ItemGroup>

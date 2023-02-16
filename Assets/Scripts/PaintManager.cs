@@ -11,7 +11,7 @@ public class PaintManager : MonoBehaviour
     {
 
         gameManager = GetComponent<GameManager>();
-        List<GameObject> cubes = gameManager.AllyList;
+        List<CubeRaycaster> cubes = gameManager.AllyList;
 
     }
     // Update is called once per frame
@@ -33,6 +33,25 @@ public class PaintManager : MonoBehaviour
             }
         }
      }
+
+    public void Paint2(GameObject gameObject)
+    {
+        //gameObject.Transform[] allChildren = GetComponentsInChildren<Transform>();
+
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            //if(gameObject.transform.GetChild(i).GetComponent<Renderer>().material.color == Color.green)
+            //{
+
+                if (gameObject.transform.GetChild(i).GetComponent<Renderer>().material.color == Color.white)
+                {
+                    gameObject.transform.GetChild(i).GetComponent<Renderer>().material.color = Color.red;
+                    Debug.Log("Paint manager");
+                }
+           // }
+            
+        }
+    }
 
 }
 

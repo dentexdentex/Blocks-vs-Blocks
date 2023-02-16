@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CubeRaycaster : MonoBehaviour
 {
-    public List<GameObject> hitObjects = new List<GameObject>();
+    public List<CubeRaycaster> myNeighborhood = new List<CubeRaycaster>();
 
     private GameObject root;
 
-    //public bool isMyCube;
+    public bool isAlly = false;
 
     private Renderer rend;
 
@@ -28,19 +28,27 @@ public class CubeRaycaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.right, out hit))
         {
-            hitObjects.Add(hit.collider.gameObject);
+            myNeighborhood.Add(hit.collider.GetComponent<CubeRaycaster>());
+            //if (!All.Contains(hit.collider.gameObject))    
+            //{
+            //All.Add(hit.collider.gameObject);
+
+            //}
         }
         if (Physics.Raycast(transform.position, Vector3.left, out hit))
         {
-            hitObjects.Add(hit.collider.gameObject);
+            myNeighborhood.Add(hit.collider.GetComponent<CubeRaycaster>());
+            
         }
         if (Physics.Raycast(transform.position, Vector3.up, out hit))
         {
-            hitObjects.Add(hit.collider.gameObject);
+            myNeighborhood.Add(hit.collider.GetComponent<CubeRaycaster>());
+           
         }
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
-            hitObjects.Add(hit.collider.gameObject);
+            myNeighborhood.Add(hit.collider.GetComponent<CubeRaycaster>());
+         
         }
     }
 
